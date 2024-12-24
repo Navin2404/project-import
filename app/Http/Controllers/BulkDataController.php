@@ -26,7 +26,7 @@ class BulkDataController extends Controller
 
     public function imported(Request $request)
 {
-    // Validate the uploaded file
+    
     $request->validate([
         'file' => 'required|mimes:xlsx,xls',
     ]);
