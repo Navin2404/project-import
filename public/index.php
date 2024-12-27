@@ -44,7 +44,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 ini_set('memory_limit', '512M'); // Increase as needed (e.g., '1G' for 1GB)
-ini_set('max_execution_time', '300'); // Extend script execution time
+ini_set('max_execution_time', '600'); // Extend script execution time
 
 
 /*

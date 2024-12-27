@@ -4,11 +4,12 @@ namespace App\Imports;
 
 use App\Models\BulkData;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 
-class BulkDataImport implements ToModel, WithChunkReading, ShouldQueue, WithBatchInserts
+class BulkDataImport implements ToModel, WithChunkReading, ShouldQueue, WithBatchInserts,WithHeadingRow
 {
     /**
      * Transform each row of data into a BulkData model.
@@ -50,7 +51,7 @@ class BulkDataImport implements ToModel, WithChunkReading, ShouldQueue, WithBatc
      */
     public function batchSize(): int
     {
-        return 1000; 
+        return 10000; 
     }
 
     /**
